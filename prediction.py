@@ -26,6 +26,6 @@ def get_latest_predictions(df):
           .copy()
     )
     latest["Reorder_Required"] = (
-        latest["Predicted_Days_To_Stockout"] <= latest["Supplier_Lead_Time_Days"]
+        latest["Predicted_Days_To_Stockout"] <= latest["Supplier_Lead_Time_Days"] + 3
     )
     return latest
